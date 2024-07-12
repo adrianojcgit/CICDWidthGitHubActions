@@ -1,0 +1,9 @@
+ignore:
+  - "src/index.js"
+  - "src/reportWebVitals.js"
+
+coverage:
+  status:
+    patch:
+      default:
+        target: 80%
