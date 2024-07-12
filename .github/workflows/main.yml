@@ -1,0 +1,22 @@
+name: Github Actions Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: NodeJS Setup
+        uses: actions/setup-node@v3
+        with:
+            node-version: "20.x"				
+
+      - name: Installing Dependencies
+        run: yarn install
+
+      - name: Testing Running
+        run: yarn test --coverage
